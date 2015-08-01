@@ -1,0 +1,1042 @@
+ship = Shuttlepack I
+version = 1.0.4
+description = No description.
+type = None
+size = 3.611044,2.960039,3.743419
+PART
+{
+	part = fuelTankSmall_4294657014
+	partName = Part
+	pos = -0.968452,15.56869,1.165238
+	attPos = 0,0,0
+	attPos0 = -0.968452,15.56869,1.165238
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = fuelTankSmall_4294661536
+	attN = bottom,fuelTankSmall_4294661536
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = LiquidFuel
+		amount = 90
+		maxAmount = 90
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = Oxidizer
+		amount = 110
+		maxAmount = 110
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+}
+PART
+{
+	part = fuelTankSmall_4294661536
+	partName = Part
+	pos = -0.968452,14.45819,1.165238
+	attPos = 0,0,0
+	attPos0 = 0,-1.1105,0
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = liquidEngine3_4294661502
+	link = fuelTankSmall_4294661410
+	link = fuelTankSmall_4294661290
+	link = fuelTankSmall_4294661170
+	link = fuelTankSmall_4294661050
+	link = fuelTankSmall_4294660930
+	link = fuelTankSmall_4294660810
+	attN = top,fuelTankSmall_4294657014
+	attN = bottom,liquidEngine3_4294661502
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = LiquidFuel
+		amount = 90
+		maxAmount = 90
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = Oxidizer
+		amount = 110
+		maxAmount = 110
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+}
+PART
+{
+	part = liquidEngine3_4294661502
+	partName = Part
+	pos = -0.968452,13.63231,1.165238
+	attPos = 0,0,0
+	attPos0 = 0,-0.8258724,0
+	rot = 0,0,0,1
+	attRot = 0,0,0,1
+	attRot0 = 0,0,0,1
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 1
+	dstg = 0
+	sidx = 2
+	sqor = 1
+	sepI = 0
+	attm = 0
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	attN = top,fuelTankSmall_4294661536
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	MODULE
+	{
+		name = ModuleEngines
+		isEnabled = True
+		staged = False
+		flameout = False
+		EngineIgnited = False
+		engineShutdown = False
+		currentThrottle = 0
+		thrustPercentage = 100
+		manuallyOverridden = False
+		thrustPercentage_UIFlight
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 100
+			stepIncrement = 0.5
+		}
+		EVENTS
+		{
+			Activate
+			{
+				active = True
+				guiActive = True
+				guiIcon = Activate Engine
+				guiName = Activate Engine
+				category = Activate Engine
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+			Shutdown
+			{
+				active = False
+				guiActive = True
+				guiIcon = Shutdown Engine
+				guiName = Shutdown Engine
+				category = Shutdown Engine
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			OnAction
+			{
+				actionGroup = None
+			}
+			ShutdownAction
+			{
+				actionGroup = None
+			}
+			ActivateAction
+			{
+				actionGroup = None
+			}
+		}
+	}
+	MODULE
+	{
+		name = ModuleGimbal
+		isEnabled = True
+		gimbalLock = False
+		gimbalLimiter = 100
+		gimbalLock_UIFlight
+		{
+			controlEnabled = True
+		}
+		gimbalLimiter_UIFlight
+		{
+			controlEnabled = True
+			minValue = 0
+			maxValue = 100
+			stepIncrement = 1
+		}
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+			ToggleAction
+			{
+				actionGroup = None
+			}
+			LockAction
+			{
+				actionGroup = None
+			}
+			FreeAction
+			{
+				actionGroup = None
+			}
+		}
+	}
+	MODULE
+	{
+		name = ModuleAnimateHeat
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleJettison
+		isEnabled = True
+		isJettisoned = True
+		EVENTS
+		{
+			Jettison
+			{
+				active = False
+				guiActive = True
+				guiIcon = Jettison
+				guiName = Jettison
+				category = Jettison
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+			JettisonAction
+			{
+				actionGroup = None
+			}
+		}
+	}
+	MODULE
+	{
+		name = ModuleTestSubject
+		isEnabled = True
+		EVENTS
+		{
+			RunTestEvent
+			{
+				active = False
+				guiActive = True
+				guiIcon = Run Test
+				guiName = Run Test
+				category = Run Test
+				guiActiveUnfocused = False
+				unfocusedRange = 2
+				externalToEVAOnly = True
+			}
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = ModuleSurfaceFX
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = fuelTankSmall_4294661410
+	partName = Part
+	pos = 0.2209092,14.41581,1.165238
+	attPos = 0,0,0
+	attPos0 = 1.189361,-0.04237556,3.352761E-08
+	rot = 1.776357E-15,1,-7.486784E-23,0
+	attRot = 0,0,0,1
+	attRot0 = 1.776357E-15,1,-7.486784E-23,0
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = fuelLine_4294661376
+	sym = fuelTankSmall_4294661290
+	sym = fuelTankSmall_4294661170
+	sym = fuelTankSmall_4294661050
+	sym = fuelTankSmall_4294660930
+	sym = fuelTankSmall_4294660810
+	srfN = srfAttach,fuelTankSmall_4294661536
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = LiquidFuel
+		amount = 90
+		maxAmount = 90
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = Oxidizer
+		amount = 110
+		maxAmount = 110
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+}
+PART
+{
+	part = fuelLine_4294661376
+	partName = CompoundPart
+	pos = -0.1805968,14.41322,1.566745
+	attPos = 0,0,0
+	attPos0 = 0.4015062,-0.002584457,-0.4015061
+	rot = -6.032884E-08,0.3826834,-1.456467E-07,0.9238796
+	attRot = 0,0,0,1
+	attRot0 = 1.456467E-07,-0.9238796,-6.032884E-08,0.3826834
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = fuelLine_4294661256
+	sym = fuelLine_4294661136
+	sym = fuelLine_4294661016
+	sym = fuelLine_4294660896
+	sym = fuelLine_4294660776
+	srfN = srfAttach,fuelTankSmall_4294661410
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+		tgt = 4294661536
+		pos = -0.2799979,-0.0499669,-0.2615799
+		rot = 0,-0.7933533,-4.574887E-09,0.6087615
+		dir = -0.7245968,-0.1293079,-0.6769335
+	}
+	MODULE
+	{
+		name = CModuleLinkedMesh
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = CModuleFuelLine
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = fuelTankSmall_4294661290
+	partName = Part
+	pos = -0.3737714,14.41581,0.1352211
+	attPos = 0,0,0
+	attPos0 = 0.5946806,-0.04237556,-1.030017
+	rot = 1.53837E-15,0.8660254,-8.881785E-16,-0.5
+	attRot = 0,0,0,1
+	attRot0 = 1.53837E-15,0.8660254,-8.881785E-16,-0.5
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = fuelLine_4294661256
+	sym = fuelTankSmall_4294661410
+	sym = fuelTankSmall_4294661170
+	sym = fuelTankSmall_4294661050
+	sym = fuelTankSmall_4294660930
+	sym = fuelTankSmall_4294660810
+	srfN = srfAttach,fuelTankSmall_4294661536
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = LiquidFuel
+		amount = 90
+		maxAmount = 90
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = Oxidizer
+		amount = 110
+		maxAmount = 110
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+}
+PART
+{
+	part = fuelLine_4294661256
+	partName = CompoundPart
+	pos = -0.22681,14.41322,0.6836892
+	attPos = 0,0,0
+	attPos0 = 0.4015062,-0.002584457,-0.4015061
+	rot = -1.250697E-07,0.7933533,-9.596934E-08,0.6087615
+	attRot = 0,0,0,1
+	attRot0 = 1.456467E-07,-0.9238796,-6.032884E-08,0.3826834
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = fuelLine_4294661376
+	sym = fuelLine_4294661136
+	sym = fuelLine_4294661016
+	sym = fuelLine_4294660896
+	sym = fuelLine_4294660776
+	srfN = srfAttach,fuelTankSmall_4294661290
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+		tgt = 4294661536
+		pos = -0.2799971,-0.0499669,-0.2615792
+		rot = 0,-0.7933533,-6.702463E-08,0.6087615
+		dir = -0.7245968,-0.1293079,-0.6769335
+	}
+	MODULE
+	{
+		name = CModuleLinkedMesh
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = CModuleFuelLine
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = fuelTankSmall_4294661170
+	partName = Part
+	pos = -1.563133,14.41581,0.1352211
+	attPos = 0,0,0
+	attPos0 = -0.5946807,-0.04237556,-1.030017
+	rot = 8.881783E-16,0.5,-1.53837E-15,-0.8660254
+	attRot = 0,0,0,1
+	attRot0 = 8.881783E-16,0.5,-1.53837E-15,-0.8660254
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = fuelLine_4294661136
+	sym = fuelTankSmall_4294661410
+	sym = fuelTankSmall_4294661290
+	sym = fuelTankSmall_4294661050
+	sym = fuelTankSmall_4294660930
+	sym = fuelTankSmall_4294660810
+	srfN = srfAttach,fuelTankSmall_4294661536
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = LiquidFuel
+		amount = 90
+		maxAmount = 90
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = Oxidizer
+		amount = 110
+		maxAmount = 110
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+}
+PART
+{
+	part = fuelLine_4294661136
+	partName = CompoundPart
+	pos = -1.014665,14.41322,0.2821833
+	attPos = 0,0,0
+	attPos0 = 0.4015062,-0.002584457,-0.4015061
+	rot = -1.562982E-07,0.9914449,-2.057705E-08,0.1305262
+	attRot = 0,0,0,1
+	attRot0 = 1.456467E-07,-0.9238796,-6.032884E-08,0.3826834
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = fuelLine_4294661376
+	sym = fuelLine_4294661256
+	sym = fuelLine_4294661016
+	sym = fuelLine_4294660896
+	sym = fuelLine_4294660776
+	srfN = srfAttach,fuelTankSmall_4294661170
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+		tgt = 4294661536
+		pos = -0.2799965,-0.0499669,-0.2615785
+		rot = 0,-0.7933532,-1.094213E-07,0.6087617
+		dir = -0.7245968,-0.1293079,-0.6769335
+	}
+	MODULE
+	{
+		name = CModuleLinkedMesh
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = CModuleFuelLine
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = fuelTankSmall_4294661050
+	partName = Part
+	pos = -2.157813,14.41581,1.165238
+	attPos = 0,0,0
+	attPos0 = -1.189361,-0.04237556,7.078052E-08
+	rot = -1.525149E-22,-4.371139E-08,-1.776357E-15,-1
+	attRot = 0,0,0,1
+	attRot0 = -1.525149E-22,-4.371139E-08,-1.776357E-15,-1
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = fuelLine_4294661016
+	sym = fuelTankSmall_4294661410
+	sym = fuelTankSmall_4294661290
+	sym = fuelTankSmall_4294661170
+	sym = fuelTankSmall_4294660930
+	sym = fuelTankSmall_4294660810
+	srfN = srfAttach,fuelTankSmall_4294661536
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = LiquidFuel
+		amount = 90
+		maxAmount = 90
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = Oxidizer
+		amount = 110
+		maxAmount = 110
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+}
+PART
+{
+	part = fuelLine_4294661016
+	partName = CompoundPart
+	pos = -1.756307,14.41322,0.7637322
+	attPos = 0,0,0
+	attPos0 = 0.4015062,-0.002584457,-0.4015061
+	rot = -1.456467E-07,0.9238796,6.032884E-08,-0.3826834
+	attRot = 0,0,0,1
+	attRot0 = 1.456467E-07,-0.9238796,-6.032884E-08,0.3826834
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = fuelLine_4294661376
+	sym = fuelLine_4294661256
+	sym = fuelLine_4294661136
+	sym = fuelLine_4294660896
+	sym = fuelLine_4294660776
+	srfN = srfAttach,fuelTankSmall_4294661050
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+		tgt = 4294661536
+		pos = -0.279997,-0.0499669,-0.261579
+		rot = 0,-0.7933533,-1.294743E-07,0.6087615
+		dir = -0.7245968,-0.1293079,-0.6769335
+	}
+	MODULE
+	{
+		name = CModuleLinkedMesh
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = CModuleFuelLine
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = fuelTankSmall_4294660930
+	partName = Part
+	pos = -1.563133,14.41581,2.195256
+	attPos = 0,0,0
+	attPos0 = -0.5946806,-0.04237556,1.030017
+	rot = -8.881786E-16,-0.5000001,-1.53837E-15,-0.8660254
+	attRot = 0,0,0,1
+	attRot0 = -8.881786E-16,-0.5000001,-1.53837E-15,-0.8660254
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = fuelLine_4294660896
+	sym = fuelTankSmall_4294661410
+	sym = fuelTankSmall_4294661290
+	sym = fuelTankSmall_4294661170
+	sym = fuelTankSmall_4294661050
+	sym = fuelTankSmall_4294660810
+	srfN = srfAttach,fuelTankSmall_4294661536
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = LiquidFuel
+		amount = 90
+		maxAmount = 90
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = Oxidizer
+		amount = 110
+		maxAmount = 110
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+}
+PART
+{
+	part = fuelLine_4294660896
+	partName = CompoundPart
+	pos = -1.710094,14.41322,1.646788
+	attPos = 0,0,0
+	attPos0 = 0.4015062,-0.002584457,-0.4015061
+	rot = -9.596933E-08,0.6087615,1.250697E-07,-0.7933534
+	attRot = 0,0,0,1
+	attRot0 = 1.456467E-07,-0.9238796,-6.032884E-08,0.3826834
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = fuelLine_4294661376
+	sym = fuelLine_4294661256
+	sym = fuelLine_4294661136
+	sym = fuelLine_4294661016
+	sym = fuelLine_4294660776
+	srfN = srfAttach,fuelTankSmall_4294660930
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+		tgt = 4294661536
+		pos = -0.2799973,-0.0499669,-0.2615794
+		rot = 0,-0.7933533,-6.702463E-08,0.6087615
+		dir = -0.7245968,-0.1293079,-0.6769335
+	}
+	MODULE
+	{
+		name = CModuleLinkedMesh
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = CModuleFuelLine
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
+PART
+{
+	part = fuelTankSmall_4294660810
+	partName = Part
+	pos = -0.3737714,14.41581,2.195256
+	attPos = 0,0,0
+	attPos0 = 0.5946804,-0.04237556,1.030017
+	rot = -1.53837E-15,-0.8660254,-8.881784E-16,-0.5000001
+	attRot = 0,0,0,1
+	attRot0 = -1.53837E-15,-0.8660254,-8.881784E-16,-0.5000001
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	link = fuelLine_4294660776
+	sym = fuelTankSmall_4294661410
+	sym = fuelTankSmall_4294661290
+	sym = fuelTankSmall_4294661170
+	sym = fuelTankSmall_4294661050
+	sym = fuelTankSmall_4294660930
+	srfN = srfAttach,fuelTankSmall_4294661536
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+	}
+	RESOURCE
+	{
+		name = LiquidFuel
+		amount = 90
+		maxAmount = 90
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+	RESOURCE
+	{
+		name = Oxidizer
+		amount = 110
+		maxAmount = 110
+		flowState = True
+		isTweakable = True
+		hideFlow = False
+		flowMode = Both
+	}
+}
+PART
+{
+	part = fuelLine_4294660776
+	partName = CompoundPart
+	pos = -0.9222392,14.41322,2.048294
+	attPos = 0,0,0
+	attPos0 = 0.4015062,-0.002584457,-0.4015061
+	rot = -2.057706E-08,0.1305263,1.562982E-07,-0.9914449
+	attRot = 0,0,0,1
+	attRot0 = 1.456467E-07,-0.9238796,-6.032884E-08,0.3826834
+	mir = 1,1,1
+	symMethod = Radial
+	istg = 0
+	dstg = 0
+	sidx = -1
+	sqor = -1
+	sepI = 0
+	attm = 1
+	modCost = 0
+	modMass = 0
+	modSize = (0.0, 0.0, 0.0)
+	sym = fuelLine_4294661376
+	sym = fuelLine_4294661256
+	sym = fuelLine_4294661136
+	sym = fuelLine_4294661016
+	sym = fuelLine_4294660896
+	srfN = srfAttach,fuelTankSmall_4294660810
+	EVENTS
+	{
+	}
+	ACTIONS
+	{
+	}
+	PARTDATA
+	{
+		tgt = 4294661536
+		pos = -0.2799977,-0.0499669,-0.2615797
+		rot = 0,-0.7933533,-2.462775E-08,0.6087615
+		dir = -0.7245968,-0.1293079,-0.6769335
+	}
+	MODULE
+	{
+		name = CModuleLinkedMesh
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+	MODULE
+	{
+		name = CModuleFuelLine
+		isEnabled = True
+		EVENTS
+		{
+		}
+		ACTIONS
+		{
+		}
+	}
+}
